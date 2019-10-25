@@ -1,6 +1,11 @@
 const JSONBOX = "https://jsonbox.io/box_38908f7b48150c5878e8/rapperwebsite";
 
-fetch(JSONBOX)
+
+
+var url = new URL(window.location.href);
+var searchterm = url.searchParams.get("search");
+
+fetch(JSONBOX + "?q=name:" + searchterm)
 .then(function(response) {
   return response.json();
 })
