@@ -13,13 +13,7 @@ fetch(JSONBOX + "?q=name:" + searchterm)
   //console.log(jsonData);
 
   for (let item of jsonData) {
-    var node = document.createElement("LI");
-    var textnode = document.createTextNode(item.name);
-    var instagramNode = document.createTextNode(item.instagram);
-    node.appendChild(textnode);
-    node.appendChild(instagramNode);
-    document.getElementById("app").appendChild(node);
-    $("#app").append("<a href='https://instagram.com/" + item.instagram + "'>" + item.instagram + "</a>");
+    $("#app").append("<li>"+item.name+"<a href='https://instagram.com/" + item.instagram + "'>" + item.instagram + "</a></li>");
   }
 })
 .catch(function(err) {
