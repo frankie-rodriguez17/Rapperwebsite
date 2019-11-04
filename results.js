@@ -13,7 +13,7 @@ fetch(JSONBOX + "?q=name:" + searchterm)
   //console.log(jsonData);
 
   for (let item of jsonData) {
-    $("#app").append("<li>"+item.name+"<a href='https://instagram.com/" + item.instagram + "'>" + item.instagram + "</a></li>");
+    $("#app").append("<li>"+item.name+"<a href='https://instagram.com/" + item.instagram + "'>" + item.instagram + "</a><img src='"+item.image+"'></li>");
   }
 })
 .catch(function(err) {
