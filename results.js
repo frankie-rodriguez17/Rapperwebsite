@@ -1,4 +1,4 @@
-const JSONBOX = "https://jsonbox.io/box_38908f7b48150c5878e8/rapperwebsite";
+const JSONBOX = "https://jsonbox.io/box_38908f7b48150c5878e8/rappers6";
 
 
 
@@ -13,7 +13,10 @@ fetch(JSONBOX + "?q=name:*" + searchterm + "*")
   //console.log(jsonData);
 
   for (let item of jsonData) {
-    $("#app").append("<li>"+item.name+"<a href='https://instagram.com/" + item.instagram + "'>" + item.instagram + "</a><img src='"+item.image+"'></li>");
+    let name = "<p>" +item.name+"</p>";
+    let instagram = "<p><a href='https://instagram.com/" + item.instagram + "'>" + item.instagram + "</a></p>";
+    
+    $("#app").append("<li>"+name+instagram+"<img src='"+item.image+"'></li>");
   }
 })
 .catch(function(err) {
